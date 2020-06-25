@@ -22,6 +22,25 @@ class DarkDashboard extends StatelessWidget {
     );
   }
 
+  Widget getLinkText(
+    String text,
+    String url,
+    HomeViewModel model,
+  ) {
+    return GestureDetector(
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+      //onTap: () => model.pageSelection(page),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -40,65 +59,42 @@ class DarkDashboard extends StatelessWidget {
                   child: Row(
                     children: [
                       // Padding(
-                      //   padding: const EdgeInsets.all(10),
-                      //   child: Text(
-                      //     "Home",
-                      //     style: TextStyle(
-                      //       color: model.home,
-                      //     ),
-                      //   ),
-                      // ),
                       getText(
                         model.home,
                         "Home",
                         model,
                         PageSelection.Home,
                       ),
-                      // Padding(
-                      //   padding: const EdgeInsets.all(10),
-                      //   child: Text(
-                      //     "Skills",
-                      //     style: TextStyle(
-                      //       color: model.skills,
-                      //     ),
-                      //   ),
-                      // ),
                       getText(
                         model.skills,
                         "Skills",
                         model,
                         PageSelection.Skills,
                       ),
-                      // Padding(
-                      //   padding: const EdgeInsets.all(10),
-                      //   child: Text(
-                      //     "Work",
-                      //     style: TextStyle(
-                      //       color: model.work,
-                      //     ),
-                      //   ),
-                      // ),
                       getText(
                         model.work,
                         "Work",
                         model,
                         PageSelection.Work,
                       ),
+                      Transform.scale(
+                        scale: 1.5,
+                        child: Text(
+                          "|",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      getLinkText(
+                        "LinkedIn",
+                        Strings.linkedinurl,
+                        model,
+                      ),
+                      getLinkText(
+                        "Github",
+                        Strings.githuburl,
+                        model,
+                      ),
                       Spacer(),
-                      // GestureDetector(
-                      //   child: Padding(
-                      //     padding: const EdgeInsets.all(10),
-                      //     child: Text(
-                      //       "Contact",
-                      //       style: TextStyle(
-                      //         color: model.contact,
-                      //       ),
-                      //     ),
-                      //   ),
-                      //   onTap: () {
-                      //     model.pageSelection(PageSelection.Contact);
-                      //   },
-                      // ),
                       getText(
                         model.contact,
                         "Contact",
@@ -175,7 +171,7 @@ class DarkDashboard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        "What i do",
+                        Strings.whatido,
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: Colors.white,
@@ -183,7 +179,7 @@ class DarkDashboard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Learn more >>",
+                        Strings.learnmore,
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: selectedColor,
