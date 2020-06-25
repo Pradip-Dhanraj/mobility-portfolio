@@ -17,7 +17,7 @@ class Header extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             //launch url
-            snippets?.launchInWebViewWithJavaScript(url);
+            snippets?.launchInBrowser(url);
           },
           child: CircleAvatar(
             maxRadius: 15,

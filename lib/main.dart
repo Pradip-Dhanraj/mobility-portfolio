@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/states/counter_bloc.dart';
 import 'package:provider/provider.dart';
 
+import 'resources/locator.dart';
+import 'resources/router.dart' as router;
+import 'resources/route_paths.dart' as routes;
 import 'resources/snippets.dart';
 import 'templates/header.dart';
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
@@ -20,12 +24,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: ChangeNotifierProvider<CounterBloc>.value(
-        value: CounterBloc(),
-        child: CounterPage(
-          snippets: snippets,
-        ),
-      ),
+      onGenerateRoute: router.generateRoute,
+      initialRoute: routes.HomeRoute,
+      // home: ChangeNotifierProvider<CounterBloc>.value(
+      //   value: CounterBloc(),
+      //   child: CounterPage(
+      //     snippets: snippets,
+      //   ),
+      // ),
     );
   }
 }
@@ -47,7 +53,7 @@ class CounterPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Header(snippets:snippets),
+          Header(snippets: snippets),
           Center(
             child: Text("${counterBloc.counter}"),
           ),
