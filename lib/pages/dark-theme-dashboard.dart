@@ -6,6 +6,14 @@ import 'package:portfolio/viewmodels/home-viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class DarkDashboard extends StatelessWidget {
+  Widget divider() => Transform.scale(
+        scale: 1.5,
+        child: Text(
+          "|",
+          style: TextStyle(color: Colors.white),
+        ),
+      );
+
   Widget getText(
       Color textcolor, String text, HomeViewModel model, PageSelection page) {
     return GestureDetector(
@@ -37,7 +45,7 @@ class DarkDashboard extends StatelessWidget {
           ),
         ),
       ),
-      //onTap: () => model.pageSelection(page),
+      onTap: () => model.launchInBrowser(url),
     );
   }
 
@@ -58,7 +66,7 @@ class DarkDashboard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   child: Row(
                     children: [
-                      // Padding(
+                      divider(),
                       getText(
                         model.home,
                         "Home",
@@ -77,13 +85,7 @@ class DarkDashboard extends StatelessWidget {
                         model,
                         PageSelection.Work,
                       ),
-                      Transform.scale(
-                        scale: 1.5,
-                        child: Text(
-                          "|",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
+                      divider(),
                       getLinkText(
                         "LinkedIn",
                         Strings.linkedinurl,
@@ -94,6 +96,7 @@ class DarkDashboard extends StatelessWidget {
                         Strings.githuburl,
                         model,
                       ),
+                      divider(),
                       Spacer(),
                       getText(
                         model.contact,

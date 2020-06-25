@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/resources/colors.dart';
 import 'package:portfolio/resources/enum.dart';
-import 'package:portfolio/resources/locator.dart';
-import 'package:portfolio/services/navigation-service.dart';
 import 'package:portfolio/viewmodels/base-viewmodel.dart';
 
 class HomeViewModel extends BaseModel {
-  final NavigationService _navigationService = locator<NavigationService>();
-
   //PageSelection _selectedoption;
   Color home = selectedColor;
   Color skills = Colors.white;
@@ -23,6 +19,8 @@ class HomeViewModel extends BaseModel {
       contact,
     ];
   }
+
+  void launchInBrowser(String url) => snippets.launchInBrowser(url);
 
   void _resetColors() {
     home = Colors.white;

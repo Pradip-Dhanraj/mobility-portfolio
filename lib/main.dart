@@ -14,7 +14,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final Snippets snippets = Snippets();
+  //final Snippets snippets = Snippets();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
