@@ -6,6 +6,7 @@ import 'resources/locator.dart';
 import 'resources/router.dart' as router;
 import 'resources/route_paths.dart' as routes;
 import 'resources/snippets.dart';
+import 'services/navigation-service.dart';
 import 'templates/header.dart';
 
 void main() {
@@ -20,12 +21,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Portfolia',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
       onGenerateRoute: router.generateRoute,
       initialRoute: routes.HomeRoute,
+      navigatorKey: locator<NavigationService>().navigatorKey,
       // home: ChangeNotifierProvider<CounterBloc>.value(
       //   value: CounterBloc(),
       //   child: CounterPage(
