@@ -11,7 +11,12 @@ class Strings {
   static const String githuburl = 'https://github.com/Pradip-Dhanraj';
   static const String profileimg =
       'https://scontent.fbom2-1.fna.fbcdn.net/v/t1.0-9/82782730_3113154942042504_5968298533185388544_n.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=nGXdWyVwjHwAX9nlygx&_nc_ht=scontent.fbom2-1.fna&oh=c0b5be8b1621a0cfd2b7acb09cf1fc75&oe=5F159892';
-
+  static const String xamarinskillls =
+      "$bulletpoint Custom renderers \n$bulletpoint Styles & behaviors  \n$bulletpoint Native Android & iOS features  \n$bulletpoint Reusable components \n$bulletpoint Knowledge of cross-platform structure. \n$bulletpoint Experience with JSON, XAML/XML, and Web Services. \n$bulletpoint State management";
+  static const String flutterskillls =
+      "$bulletpoint Custom renderers \n$bulletpoint Styles & behaviors  \n$bulletpoint Native Android & iOS features  \n$bulletpoint Reusable components \n$bulletpoint Knowledge of cross-platform structure. \n$bulletpoint Experience with JSON, XAML/XML, and Web Services. ";
+  //static const String bulletpoint = "⚪";
+  static const String bulletpoint = "-";
 //Images
 
   static const String linkedinimg =
