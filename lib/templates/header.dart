@@ -2,7 +2,6 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/resources/snippets.dart';
 import 'package:portfolio/resources/strings.dart';
-import 'package:portfolio/resources/theme.dart';
 
 class Header extends StatelessWidget {
   final Snippets snippets;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/templates/dark-theme-header.dart';
-import 'package:portfolio/viewmodels/home-viewmodel.dart';
 import 'package:portfolio/viewmodels/startpage-viewmodel.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +19,12 @@ class StartPage extends StatelessWidget {
                 // header menu option
                 DarkHeader(model),
                 // bio Section
-                model.displaycontainer,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 50,
+                  ),
+                  child: model.displaycontainer,
+                ),
               ],
             ),
           ),

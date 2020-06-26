@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/resources/enum.dart';
 import 'package:portfolio/resources/strings.dart';
-import 'package:portfolio/viewmodels/base-viewmodel.dart';
 import 'package:portfolio/resources/route_paths.dart' as route;
+import 'package:portfolio/viewmodels/startpage-viewmodel.dart';
 
 class DarkHeader extends StatelessWidget {
   final model;
@@ -14,8 +14,8 @@ class DarkHeader extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       );
-  Widget getText(
-      Color textcolor, String text, BaseModel model, PageSelection page) {
+  Widget getText(Color textcolor, String text, StartPageViewModel model,
+      PageSelection page) {
     return GestureDetector(
       child: Padding(
         padding: const EdgeInsets.all(10),
@@ -33,7 +33,7 @@ class DarkHeader extends StatelessWidget {
   Widget getLinkText(
     String text,
     String url,
-    BaseModel model,
+    StartPageViewModel model,
   ) {
     return GestureDetector(
       child: Padding(
