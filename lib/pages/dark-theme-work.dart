@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/templates/dark-theme-header.dart';
 import 'package:portfolio/viewmodels/work-viewmodel.dart';
 import 'package:provider/provider.dart';
 
@@ -9,16 +8,19 @@ class Work extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => WorkViewModel(),
       child: Consumer<WorkViewModel>(
-        builder: (context, model, child) => Scaffold(
-          backgroundColor: Colors.black,
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                // header menu option
-                DarkHeader(model),
-              ],
+        builder: (context, model, child) => Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // bio Section
+            //model.displaycontainer,
+            Text(
+              "Work stuffs are here",
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

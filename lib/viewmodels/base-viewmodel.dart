@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/dark-theme-contact.dart';
+import 'package:portfolio/pages/dark-theme-dashboard.dart';
+import 'package:portfolio/pages/dark-theme-skills.dart';
+import 'package:portfolio/pages/dark-theme-work.dart';
 import 'package:portfolio/resources/colors.dart';
 import 'package:portfolio/resources/enum.dart';
 import 'package:portfolio/resources/locator.dart';
@@ -10,6 +14,7 @@ import 'package:portfolio/services/navigation-service.dart';
 class BaseModel extends ChangeNotifier {
   bool _busy = false;
   String _errorMessage;
+  Widget displaycontainer;
 
   final NavigationService navigationService = locator<NavigationService>();
   final Snippets snippets = locator<Snippets>();
@@ -25,6 +30,7 @@ class BaseModel extends ChangeNotifier {
     work = Colors.white;
     contact = Colors.white;
   }
+
   void launchInBrowser(String url) => snippets.launchInBrowser(url);
 
   Future pageSelection(PageSelection page) async {
@@ -32,22 +38,26 @@ class BaseModel extends ChangeNotifier {
       case PageSelection.Home:
         _resetColors();
         home = selectedColor;
-        await navigationService.navigateTo(route.HomeRoute);
+        displaycontainer = DarkDashboard();
+        //await navigationService.navigateTo(route.HomeRoute);
         break;
       case PageSelection.Skills:
         _resetColors();
         skills = selectedColor;
-        await navigationService.navigateTo(route.SkillsRoute);
+        displaycontainer = Skills();
+        //await navigationService.navigateTo(route.SkillsRoute);
         break;
       case PageSelection.Work:
         _resetColors();
         work = selectedColor;
-        await navigationService.navigateTo(route.WorkRoute);
+        displaycontainer = Work();
+        //await navigationService.navigateTo(route.WorkRoute);
         break;
       case PageSelection.Contact:
         _resetColors();
         contact = selectedColor;
-        await navigationService.navigateTo(route.ContactRoute);
+        displaycontainer = Contact();
+        //await navigationService.navigateTo(route.ContactRoute);
         break;
       default:
     }

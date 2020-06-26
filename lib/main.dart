@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       //   visualDensity: VisualDensity.adaptivePlatformDensity,
       // ),
       onGenerateRoute: router.generateRoute,
-      initialRoute: routes.HomeRoute,
+      initialRoute: routes.StartPageRoute,
       navigatorKey: locator<NavigationService>().navigatorKey,
       // home: ChangeNotifierProvider<CounterBloc>.value(
       //   value: CounterBloc(),

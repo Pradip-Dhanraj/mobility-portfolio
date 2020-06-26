@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/pages/dark-theme-contact.dart';
 import 'package:portfolio/pages/dark-theme-dashboard.dart';
 import 'package:portfolio/pages/dark-theme-skills.dart';
+import 'package:portfolio/pages/dark-theme-startpage.dart';
 import 'package:portfolio/pages/dark-theme-work.dart';
 import 'route_paths.dart' as routes;
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case routes.StartPageRoute:
+      return MaterialPageRoute(builder: (context) => StartPage());
     case routes.SkillsRoute:
       return MaterialPageRoute(builder: (context) => Skills());
     case routes.HomeRoute:
