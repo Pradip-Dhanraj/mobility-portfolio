@@ -3,7 +3,6 @@ import 'package:portfolio/viewmodels/skills-viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class Skills extends StatelessWidget {
-
   Widget getList(SkillsViewModel model) {
     var item = model.skillslist.firstWhere(
         (element) => element["title"] == model.selectedskill)["skills"];
@@ -12,11 +11,11 @@ class Skills extends StatelessWidget {
       itemCount: item.length,
       itemBuilder: (context, i) {
         return Text(
-          item[i],
-          textAlign: TextAlign.center,
+          "- ${item[i]}",
+          textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 15,
+            fontSize: 25,
           ),
         );
       },
@@ -39,22 +38,34 @@ class Skills extends StatelessWidget {
               children: [
                 TableRow(
                   children: [
-                    ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: model.skillslist.length,
-                      itemBuilder: (context, i) {
-                        return GestureDetector(
-                          child: Text(
-                            model.skillslist[i]["title"],
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: model.skillslist[i]["fontsize"],
-                            ),
-                          ),
-                          onTap: () => model.setFontSize(i, model.focusedsize),
-                        );
-                      },
+                    Column(
+                      children: [
+                        Image.asset(
+                          model.techpic,
+                          height: 200,
+                        ),
+                        ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: model.skillslist.length,
+                          itemBuilder: (context, i) {
+                            return GestureDetector(
+                              child: Opacity(
+                                opacity: model.skillslist[i]["opacity"],
+                                child: Text(
+                                  model.skillslist[i]["title"],
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: model.skillslist[i]["fontsize"],
+                                  ),
+                                ),
+                              ),
+                              onTap: () =>
+                                  model.setFontSize(i, model.focusedsize),
+                            );
+                          },
+                        ),
+                      ],
                     ),
                     getList(model),
                   ],

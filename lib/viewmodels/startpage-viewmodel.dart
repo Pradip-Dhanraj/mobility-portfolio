@@ -52,7 +52,7 @@ class StartPageViewModel extends BaseModel {
   }
 
   StartPageViewModel() {
-    //displaycontainer = DarkDashboard();
-    displaycontainer = Skills();
+    displaycontainer = DarkDashboard();
+    //displaycontainer = Skills();
   }
 }

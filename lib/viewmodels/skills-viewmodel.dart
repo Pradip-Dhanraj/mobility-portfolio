@@ -5,13 +5,18 @@ class SkillsViewModel extends BaseModel {
   final double unfocusedsize = 30;
   List<Map<String, dynamic>> skillslist;
   String selectedskill;
+  String techpic;
+  final double focusedopacity = 1;
+  final double unfocusedopacity = .5;
 
   SkillsViewModel() {
     selectedskill = "Xamarin";
+    techpic = "$selectedskill.png";
     skillslist = [
       {
         "title": "Xamarin",
         "fontsize": focusedsize,
+        "opacity": focusedopacity,
         "skills": [
           "Custom renderers.",
           "Styles & behaviors.",
@@ -26,6 +31,7 @@ class SkillsViewModel extends BaseModel {
       {
         "title": "Flutter",
         "fontsize": unfocusedsize,
+        "opacity": unfocusedopacity,
         "skills": [
           " flutter Custom renderers.",
           "Styles & behaviors.",
@@ -40,6 +46,7 @@ class SkillsViewModel extends BaseModel {
       {
         "title": "NodeJs",
         "fontsize": unfocusedsize,
+        "opacity": unfocusedopacity,
         "skills": [
           "node js Custom renderers.",
           "Styles & behaviors.",
@@ -57,9 +64,12 @@ class SkillsViewModel extends BaseModel {
   void setFontSize(int index, double fontsize) {
     for (var item in skillslist) {
       item["fontsize"] = unfocusedsize;
+      item["opacity"] = unfocusedopacity;
     }
     skillslist[index]["fontsize"] = fontsize;
     selectedskill = skillslist[index]["title"];
+    techpic = "$selectedskill.png";
+    skillslist[index]["opacity"] = focusedopacity;
     notifyListeners();
   }
 }
