@@ -8,6 +8,8 @@ class BaseModel extends ChangeNotifier {
   bool _busy = false;
   String _errorMessage;
   Widget displaycontainer;
+  double appheight;
+  double appwidth;
 
   final NavigationService navigationService = locator<NavigationService>();
   final Snippets snippets = locator<Snippets>();

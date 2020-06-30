@@ -1,14 +1,33 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:portfolio/viewmodels/base-viewmodel.dart';
 
 class WorkViewModel extends BaseModel {
-  // Future logout({bool success = true}) async {
-  //   setBusy(true);
-  //   await Future.delayed(Duration(seconds: 1));
+  final double focusedsize = 30;
+  final double unfocusedsize = 20;
+  List<Map<String, dynamic>> worklist;
+  //String selectedskill;
+  //String brand;
+  final double focusedopacity = 1;
+  final double unfocusedopacity = .5;
+  //final double selectedindex = 0;
+  int _selectedindex = 0;
+  int get selectedindex => _selectedindex;
+  set selectedindex(int value) {
+    _selectedindex= value;
+    notifyListeners();
+  }
 
-  //   if (!success) {
-  //     setErrorMessage('Error has occured during sign out');
-  //   } else {
-  //     _navigationService.goBack();
-  //   }
-  // }
+  Future<bool> loaddata() async {
+    var result = await getprojectlist();
+    worklist = List.from(result);
+    notifyListeners();
+    return worklist != null;
+  }
+
+  Future<dynamic> getprojectlist() async {
+    var jsonbody = await rootBundle.loadString('work.json');
+    return json.decode(jsonbody)["result"];
+  }
 }

@@ -1,0 +1,50 @@
+{
+    "result": [
+        {
+            "title": "Ruskin BLE",
+            "projecttitle": "Ruskin BLE",
+            "description": "Cross-platform application for Ruskin’s thermal dispersion sensor to control temperature and airflow. \nIt uses BLE as an interface to connect with mobile applications.",
+            "platform": [
+                "ios",
+                "android"
+            ],
+            "comments": "",
+            "googlelink": "",
+            "appstorelink":"dd"
+        },
+        {
+            "title": "Asian Paints",
+            "projecttitle": "Customer Care",
+            "description": "App for all the Dealers as well as Customers to file complaints against a product or to claim compensation for that.",
+            "platform": [
+                "ios",
+                "android",
+                "windows"
+            ],
+            "comments": "",
+            "googlelink": "https://play.google.com/store/apps/details?id=com.asian.customerComplaint",
+            "appstorelink":""
+        },
+        {
+            "title": "Tata Power ECR",
+            "projecttitle": "",
+            "description": "",
+            "platform": [
+                "android"
+            ],
+            "comments": "",
+            "googlelink": "https://play.google.com/store/apps/details?id=com.tatapower.ecr",
+            "appstorelink":""
+        },{
+            "title": "Tata Power DW",
+            "projecttitle": "",
+            "description": "",
+            "platform": [
+                "android"
+            ],
+            "comments": "",
+            "googlelink": "https://play.google.com/store/apps/details?id=com.tatapower.Director",
+            "appstorelink":""
+        }
+    ]
+}
