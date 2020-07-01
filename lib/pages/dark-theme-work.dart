@@ -10,7 +10,7 @@ class Work extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Project Title - ${item["projecttitle"]}",
+          item["projecttitle"],
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.white,
@@ -33,41 +33,21 @@ class Work extends StatelessWidget {
           child: Row(
             children: (item["platform"] as List<dynamic>)
                 .map(
-                  (e) => Image.asset(
-                    "$e.png",
-                    height: 50,
-                    width: 50,
+                  (e) => GestureDetector(
+                    onTap: () => {
+                      if (e["url"] != "")
+                        model.snippets.launchInBrowser(e["url"])
+                    },
+                    child: Image.asset(
+                      "${e["os"]}.png",
+                      height: 50,
+                      width: 50,
+                    ),
                   ),
                 )
                 .toList(),
           ),
         ),
-        // Padding(
-        //   padding: const EdgeInsets.only(
-        //     top: 20.0,
-        //   ),
-        //   child: Text(
-        //     item["googlelink"] == ""
-        //         ? item["googlelink"]
-        //         : "Playstore link - ${item["googlelink"]}",
-        //     style: TextStyle(
-        //       color: Colors.white,
-        //     ),
-        //   ),
-        // ),
-        // Padding(
-        //   padding: const EdgeInsets.only(
-        //     top: 20.0,
-        //   ),
-        //   child: Text(
-        //     item["appstorelink"] == ""
-        //         ? item["googlelink"]
-        //         : "Playstore link - ${item["googlelink"]}",
-        //     style: TextStyle(
-        //       color: Colors.white,
-        //     ),
-        //   ),
-        // ),
       ],
     );
     // return ListView.builder(
