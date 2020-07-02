@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:portfolio/viewmodels/base-viewmodel.dart';
 
 class ContactViewModel extends BaseModel {
@@ -11,4 +14,13 @@ class ContactViewModel extends BaseModel {
   //     _navigationService.goBack();
   //   }
   // }
+
+  Map<String, dynamic> profile;
+
+  Future<bool> loaddata() async {
+    var jsonbody = await rootBundle.loadString('profile.json');
+    profile = json.decode(jsonbody);
+    notifyListeners();
+    return profile != null;
+  }
 }
