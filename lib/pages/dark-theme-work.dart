@@ -58,66 +58,50 @@ class Work extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => WorkViewModel(),
       child: Consumer<WorkViewModel>(
-        builder: (context, model, child) => FutureBuilder(
-          future: model.loaddata(),
-          builder: (context, snapshot) => snapshot.hasData
-              ? Container(
-                  height: height * .8,
-                  child: Center(
-                    child: Table(
-                      columnWidths: {
-                        0: FractionColumnWidth(.4),
-                      },
-                      defaultVerticalAlignment:
-                          TableCellVerticalAlignment.middle,
-                      children: [
-                        TableRow(
-                          children: [
-                            ListView.builder(
-                              shrinkWrap: true,
-                              itemCount: model.worklist.length,
-                              itemBuilder: (context, i) {
-                                return GestureDetector(
-                                    child: Opacity(
-                                      opacity: model.selectedindex == i
-                                          ? model.focusedopacity
-                                          : model.unfocusedopacity,
-                                      child: Text(
-                                        model.worklist[i]["title"],
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: model.selectedindex == i
-                                              ? model.focusedsize
-                                              : model.unfocusedsize,
-                                        ),
-                                      ),
-                                    ),
-                                    onTap: () {
-                                      model.selectedindex = i;
-                                    }
-                                    //model.setFontSize(i, model.focusedsize),
-                                    );
-                              },
+        builder: (context, model, child) => Container(
+          height: height * .8,
+          child: Center(
+            child: Table(
+              columnWidths: {
+                0: FractionColumnWidth(.4),
+              },
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              children: [
+                TableRow(
+                  children: [
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: model.worklist.length,
+                      itemBuilder: (context, i) {
+                        return GestureDetector(
+                            child: Opacity(
+                              opacity: model.selectedindex == i
+                                  ? model.focusedopacity
+                                  : model.unfocusedopacity,
+                              child: Text(
+                                model.worklist[i]["title"],
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: model.selectedindex == i
+                                      ? model.focusedsize
+                                      : model.unfocusedsize,
+                                ),
+                              ),
                             ),
-                            getList(model),
-                          ],
-                        ),
-                      ],
+                            onTap: () {
+                              model.selectedindex = i;
+                            }
+                            //model.setFontSize(i, model.focusedsize),
+                            );
+                      },
                     ),
-                  ),
-                )
-              : Container(
-                  height: height * .8,
-                  child: Center(
-                    child: Text(
-                      "No data available",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
+                    getList(model),
+                  ],
                 ),
+              ],
+            ),
+          ),
         ),
       ),
     );

@@ -4,8 +4,10 @@ class Strings {
   static const String bioLine2 = "I build value through mobile applications.";
   static const String bioLine3 =
       "I am Indian 🇮🇳  mobile applicatio developer who loves building digital products.";
-  static const String learnmore = "Learn more >>";
-  static const String whatido = "What i do";
+  //static const String learnmore = "Learn more >>";
+  static const String learnmore = "";
+  //static const String whatido = "What i do";
+  static const String whatido = "";
   static const String linkedinurl =
       'https://www.linkedin.com/in/pradip-dhanraj';
   static const String githuburl = 'https://github.com/Pradip-Dhanraj';

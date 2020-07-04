@@ -47,7 +47,7 @@ class DarkDashboard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Learn more >>",
+                        Strings.learnmore,
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: selectedColor,
