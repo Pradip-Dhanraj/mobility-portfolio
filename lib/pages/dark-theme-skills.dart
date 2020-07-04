@@ -15,7 +15,7 @@ class Skills extends StatelessWidget {
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 25,
+            fontSize: 20,
           ),
         );
       },
