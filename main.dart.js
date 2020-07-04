@@ -40906,18 +40906,18 @@ $1:function(a){return J.d(J.U(a,"title"),this.a.ch)},
 $S:211}
 Q.N5.prototype={
 $2:function(a,b){var t=null
-return L.bL("- "+H.a(J.U(this.a,b)),A.bo(t,t,C.j,t,t,t,t,t,t,t,t,25,t,t,t,t,!0,t,t,t,t,t,t),C.Q)},
+return L.bL("- "+H.a(J.U(this.a,b)),A.bo(t,t,C.j,t,t,t,t,t,t,t,t,20,t,t,t,t,!0,t,t,t,t,t,t),C.Q)},
 $C:"$2",
 $R:2}
 Q.N3.prototype={
-$1:function(a){var t,s,r,q="Styles & behaviors.",p="Native Android & iOS features.",o="Reusable components.",n="Knowledge of cross-platform structure.",m="Experience with JSON, XAML/XML, and Web Services.",l="State management",k=new N.qe($.eF().$1$0(u.mY),$.eF().$1$0(u.zc),new R.ad(H.b([],u.s),u.S))
-k.ch="Xamarin"
-k.cx="Xamarin.png"
+$1:function(a){var t,s,r,q="Working knowledge of data parsing, storing and related patterns. ",p=new N.qe($.eF().$1$0(u.mY),$.eF().$1$0(u.zc),new R.ad(H.b([],u.s),u.S))
+p.ch="Xamarin"
+p.cx="Xamarin.png"
 t=u.i
 s=u.X
 r=u.z
-k.Q=H.b([P.an(["title","Xamarin","fontsize",100,"opacity",1,"skills",H.b(["Custom renderers.",q,p,q,o,n,m,l],t)],s,r),P.an(["title","Flutter","fontsize",30,"opacity",0.5,"skills",H.b([" flutter Custom renderers.",q,p,q,o,n,m,l],t)],s,r),P.an(["title","NodeJs","fontsize",30,"opacity",0.5,"skills",H.b(["node js Custom renderers.",q,p,q,o,n,m,l],t)],s,r)],u.p0)
-return k}}
+p.Q=H.b([P.an(["title","Xamarin","fontsize",100,"opacity",1,"skills",H.b(["Strong competency in building cross-platform mobile applications using Xamarin Studio or Visual Studio with Xamarin plugin. Strong expertise on Xamarin.iOS, Xamarin.Android. ","Working experience on iOS SDK and/or Android SDK ",q,"Strong SQLite, SQL Server DB experience. Hands-on experience with REST services.","Expertise in MVVM pattern. Code sharing patterns such as dependency service, service locator. ","Strong ability in documenting design concepts. Ability to socialize technical knowledge to both technical and non-technical stakeholders.","Strong in C#, the .NET framework and object oriented programming patterns and practices. ","Strong trouble shooting skills to resolve the technical issues."],t)],s,r),P.an(["title","Flutter","fontsize",30,"opacity",0.5,"skills",H.b(["Understanding of Flutter acrchitecture","Working experience in mobile development.","Experience with third-party libraries and APIs.","Solid understanding of the full mobile development life cycle, including automated testing and building","Experience in building/deplyoing iOS, Android and web apps"],t)],s,r),P.an(["title","NodeJs","fontsize",30,"opacity",0.5,"skills",H.b(["Understanding of NodeJS architecture","Hands-on experience with Express",q,"Intermediate SQLite, SQL Server DB experience. Hands-on experience with REST services."],t)],s,r)],u.p0)
+return p}}
 Q.N2.prototype={
 $3:function(a,b,c){var t=null,s=P.an([0,new S.kZ(0.4)],u.e,u.Cf),r=u.t
 return M.hy(t,new T.fg(C.N,t,t,S.V3(H.b([S.V4(H.b([T.fj(H.b([U.Xk(b.cx,200,t),B.UC(new Q.N1(b),3,!0)],r),C.bd,C.ak),this.a.nc(b)],r))],u.tI),s,C.ht),t),t,t,t,t,500,t,t,t,t)},
