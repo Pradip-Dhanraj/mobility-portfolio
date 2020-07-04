@@ -60,9 +60,7 @@ class DarkDashboard extends StatelessWidget {
                 CircleAvatar(
                   maxRadius: 200,
                   backgroundColor: Colors.black,
-                  backgroundImage: NetworkImage(
-                    Strings.profileimg,
-                  ),
+                  backgroundImage: AssetImage('profile.jpg'),
                 ),
               ],
             ),

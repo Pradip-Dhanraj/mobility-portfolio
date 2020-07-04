@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/resources/strings.dart';
 import 'package:portfolio/viewmodels/contact-viewmodel.dart';
 import 'package:provider/provider.dart';
 
@@ -29,9 +28,7 @@ class Contact extends StatelessWidget {
                           CircleAvatar(
                             radius: (width - 100) * .2,
                             backgroundColor: Colors.black,
-                            backgroundImage: NetworkImage(
-                              Strings.profileimg,
-                            ),
+                            backgroundImage: AssetImage('profile.jpg'),
                           ),
                         ],
                       ),
